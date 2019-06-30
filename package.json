@@ -1,0 +1,27 @@
+{
+  "name": "@swanix/docs",
+  "version": "0.1.0",
+  "description": "Experimental documentation template",
+  "main": "index.js",
+  "scripts": {
+    "watch": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastiansern/swanix-docs.git"
+  },
+  "author": "Sebastian Serna <jsebastianserna@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastiansern/swanix-docs/issues"
+  },
+  "homepage": "https://github.com/sebastiansern/swanix-docs#readme",
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 2.14.2"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.12",
+    "gulp": "4.0.2"
+  }
+}

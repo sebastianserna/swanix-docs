@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <!-- Global -->
+  <title>Swanix - Experimental UI framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Experimental UI Framework">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon.png" />
+  <!-- Styles and fonts -->
+  <link href="assets/styles/swanix.css" media="screen" rel="stylesheet" type="text/css">
+  <style>
+    [v-cloak] { display: none; }
+   </style>
+</head>
+<body>
+
+<div id="app">
+    <h1>Test</h2>
+
+    <div class="card" v-for="record in records" v-cloak>   
+
+        <div class="card-content">
+            <h2>{{ record.hanzi }}</h2>
+            <h3>{{ record.pinyin }}</h3>
+            <p>{{ record.meaning }}</p>
+        </div>
+
+    </div>    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+
+<script>
+new Vue({
+    el: '#app',
+    created: function() {
+        this.getRecords();
+    },
+    data: {
+        records: [],
+    },
+    methods: {
+        getRecords: function() {
+            axios.get('content/data.json').then(response => {
+                this.records = response.data
+            });
+        }
+    }
+});
+</script>
+
+</body>
+</html>
