@@ -1,16 +1,16 @@
 new Vue({
     el: '#app',
-    created: function() {
-        this.getRecords();
-    },
     data: {
-        records: [],
+        content: [],
     },
     methods: {
-        getRecords: function() {
-            axios.get('content/data.json').then(response => {
-                this.records = response.data
+        getContent: function() {
+            axios.get('content/content.json').then(response => {
+                this.content = response.data
             });
         }
+    },
+    created: function() {
+        this.getContent();
     }
 });

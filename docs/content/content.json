@@ -1,4 +1,11 @@
-[
+
+{
+  "page":
+    { 
+      "title": "Styleguide",
+      "subtitle": "Documentación básica"
+    },
+ "items": [
   {
     "title": "Colores",
     "subtitle": "Paleta de colores de la aplicación",
@@ -65,4 +72,6 @@
     "order": "9"
   }
 
-]
+  ]
+
+}
