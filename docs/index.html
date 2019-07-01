@@ -19,10 +19,10 @@
 <div id="app" class="layout">
     
     <aside class="sidebar">
-        <h2 class="logo" v-cloak>{{ content.page.title }}</h2>
+        <h2 class="logo" v-cloak>Design</h2>
         <nav>
             <ul class="menu is-vertical">   
-                <li class="card-content" v-for="item in content.items" v-cloak>
+                <li class="card-content" v-for="item in content" v-cloak>
                     <a :href="item.url">{{ item.menu_title }}</a>
                 </li>
             </ul>  
@@ -30,25 +30,45 @@
     </aside>
 
     <div class="header">
-        <p class="subtitle" v-cloak>{{ content.page.subtitle }}</p>
+        <p class="subtitle" v-cloak>Documentación general</p>
     </div>
 
     <main class="content">
-
-        <div class="block" :id="item.id" v-for="item in content.items" v-cloak>   
+        <div class="block" :id="item.id" v-for="item in content" v-cloak>   
             <div class="block-content">
                 <h2>{{ item.title }}</h2>
                 <h3>{{ item.subtitle }}</h3>
                 <p>{{ item.description }}</p>
+                <div v-html="item.body"></div>
+                <pre><code>{{ item.body }}</code></pre>
             </div>
         </div>  
     </main>
   
 </div>
 
+<!-- Vue.js-->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
-<script src="assets/scripts/app.js"></script>
+<!-- Vue app-->
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        content: [],
+    },
+    methods: {
+        getContent: function() {
+            axios.get('content/content.json').then(response => {
+                this.content = response.data
+            });
+        }
+    },
+    created: function() {
+        this.getContent();
+    }
+});
+</script>
 
 <style>
 
