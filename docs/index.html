@@ -22,7 +22,7 @@
         <h2 class="logo" v-cloak>Design</h2>
         <nav>
             <ul class="menu is-vertical">   
-                <li class="card-content" v-for="item in content" v-cloak>
+                <li class="card-content" v-for="item in sortedContent" v-cloak>
                     <a :href="item.url">{{ item.menu_title }}</a>
                 </li>
             </ul>  
@@ -34,11 +34,12 @@
     </div>
 
     <main class="content">
-        <div class="block" :id="item.id" v-for="item in content" v-cloak>   
+        <div class="block" :id="item.id" v-for="item in sortedContent" v-cloak>   
             <div class="block-content">
                 <h2>{{ item.title }}</h2>
                 <h3>{{ item.subtitle }}</h3>
                 <p>{{ item.description }}</p>
+                <h4>Order {{ item.order }}</h4>
                 <div v-html="item.body"></div>
             </div>
         </div>  
@@ -46,25 +47,31 @@
   
 </div>
 
-<!-- Vue.js-->
+<!-- Vue, Axios, Lodash -->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
 <!-- Vue app-->
 <script>
 new Vue({
     el: '#app',
     data: {
-        content: [],
+      content: [],
     },
     methods: {
-        getContent: function() {
-            axios.get('content/content.json').then(response => {
-                this.content = response.data
-            });
-        }
+      getContent: function() {
+        axios.get('content/content.json').then(response => {
+            this.content = response.data
+        });
+      }
     },
     created: function() {
-        this.getContent();
+      this.getContent();
+    },
+    computed: {
+      sortedContent: function() {
+        return _.orderBy(this.content, 'order', 'asc'); 
+      }
     }
 });
 </script>

@@ -1,10 +1,11 @@
 ---
 title: Logo
 subtitle: Logo de la aplicación
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis et diam a aliquam. Quisque tellus diam, venenatis sit amet semper consequat.
+description: Lorem ipsum dolor sit amet.
 menu_title: Logo
 id: logo   
 url: "#logo"
+order: 2
 ---
  
 ## Descripción

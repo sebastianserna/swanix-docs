@@ -1,10 +1,11 @@
 ---
 title: Tipografía
 subtitle: Tipografía de la aplicación
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis et diam a aliquam. Quisque tellus diam, venenatis sit amet semper consequat.
+description: Lorem ipsum dolor sit amet.
 menu_title: Tipografía
-id: tipografia   
+id: tipografia  
 url: "#tipografia"
+order: 3
 ---
  
 ## Descripción
