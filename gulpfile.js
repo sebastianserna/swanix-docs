@@ -42,8 +42,17 @@ function reload(done) {
 //-----------------------------------------------------
 
 marked.setOptions({
-  pedantic: true,
-  smartypants: true
+  pedantic: false,
+  gfm: true,
+  tables: true,
+  breaks: true,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false,
+  highlight: function (code, lang) {
+		return Prism.highlight(code, Prism.languages[lang], lang);
+	}
 });
 
 function markdown_compiler() {

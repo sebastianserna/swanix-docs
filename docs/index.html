@@ -34,6 +34,7 @@
     </div>
 
     <main class="content">
+
         <div class="block" :id="item.id" v-for="item in sortedContent" v-cloak>   
             <div class="block-content">
                 <h2>{{ item.title }}</h2>
@@ -51,6 +52,10 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<!-- Sintax Highlighter -->
+<link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism.css" />
+<script src="https://unpkg.com/prismjs"></script>
+
 <!-- Vue app-->
 <script>
 new Vue({
@@ -65,7 +70,7 @@ new Vue({
         });
       }
     },
-    created: function() {
+    mounted: function() {
       this.getContent();
     },
     computed: {
