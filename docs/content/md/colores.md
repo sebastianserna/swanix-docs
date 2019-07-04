@@ -5,7 +5,7 @@ description: Lorem ipsum dolor sit amet.
 menu_title: Colores
 id: colores   
 url: "#colores"
-order: 6 
+order: 4 
 ---
  
 ### Descripción

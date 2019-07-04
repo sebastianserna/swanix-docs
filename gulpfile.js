@@ -29,6 +29,7 @@ function watch_files() {
   watch('./docs/**/*.json').on('change', browserSync.reload);
   watch('./docs/**/*.svg').on('change', browserSync.reload);
   watch('./docs/**/*.html').on('change', browserSync.reload);
+  watch('./docs/**/*.css').on('change', browserSync.reload);
   watch('./docs/**/*.md', series(markdown_compiler, merge_json, reload));
 }
 
@@ -49,10 +50,7 @@ marked.setOptions({
   sanitize: false,
   smartLists: true,
   smartypants: false,
-  xhtml: false,
-  highlight: function (code, lang) {
-		return Prism.highlight(code, Prism.languages[lang], lang);
-	}
+  xhtml: false
 });
 
 function markdown_compiler() {

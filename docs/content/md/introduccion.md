@@ -6,6 +6,7 @@ menu_title: Introducción
 id: introduccion   
 url: "#introduccion"
 order: 0
+embed:
 ---
  
 ### Descripción
