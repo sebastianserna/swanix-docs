@@ -35,7 +35,6 @@
     </div>
 
     <main class="content">
-
         <div class="block" :id="item.id" v-for="item in sortedContent" v-cloak>   
             <div class="block-content">
                 <h2>{{ item.title }}</h2>
@@ -67,7 +66,7 @@ new Vue({
     },
     methods: {
       getContent: function() {
-        axios.get('content/content.json').then(response => {
+        axios.get('content/api/data.json').then(response => {
             this.content = response.data
         });
       }

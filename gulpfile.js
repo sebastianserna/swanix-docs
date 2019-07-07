@@ -54,17 +54,17 @@ marked.setOptions({
 });
 
 function markdown_compiler() {
-  return src('./docs/content/md/*.md')
+  return src('./docs/content/**/*.md')
     .pipe(markdownToJSON(marked))
-    .pipe(dest('./docs/content/json/'));
+    .pipe(dest('./docs/content/api/src/'));
 }
 
-function merge_json() {
-  return src('./docs/content/json/*.json')
-    .pipe(jsonConcat('content.json',function(data){
+function merge_json() { 
+  return src('./docs/content/api/src/*.json')
+    .pipe(jsonConcat('data.json',function(data){
       return new Buffer(JSON.stringify(data));
     }))
-    .pipe(dest('./docs/content/'));
+    .pipe(dest('./docs/content/api/'));
 }
 
 //-----------------------------------------------------
