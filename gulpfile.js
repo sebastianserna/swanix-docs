@@ -54,13 +54,13 @@ marked.setOptions({
 });
 
 function markdown_compiler() {
-  return src('./docs/content/**/*.md')
+  return src('./docs/content-old/**/*.md')
     .pipe(markdownToJSON(marked))
-    .pipe(dest('./docs/content/api/src/'));
+    .pipe(dest('./docs/content-old/api/src/'));
 }
 
 function merge_json() { 
-  return src('./docs/content/api/src/*.json')
+  return src('./docs/content-old/api/src/*.json')
     .pipe(jsonConcat('data.json',function(data){
       return new Buffer(JSON.stringify(data));
     }))

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <!-- Global -->
+  <title>Swanix - Experimental UI framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Experimental UI Framework">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon.png" />
+  <!-- Styles and fonts -->
+  <link rel="stylesheet" href="assets/styles/docs.css" />
+  <style>
+    [v-cloak] { display: none; }
+  </style>
+</head>
+<body>
+<div id="app" class="layout">
+    
+    <aside class="sidebar">
+        <h2 class="logo" v-cloak>Design</h2>
+        <nav>
+            <ul class="menu is-vertical">   
+                <li class="card-content" v-for="item in sortedContent" v-cloak>
+                    <a :href="item.url">{{ item.menu_title }}</a>
+                </li>
+            </ul>  
+        </nav>
+    </aside>
+
+    <div class="header">
+        <p class="subtitle" v-cloak>Documentación general</p>
+    </div>
+
+    <main class="content">
+        <div class="block" :id="item.id" v-for="item in sortedContent" v-cloak>   
+            <div class="block-content">
+                <h2>{{ item.title }}</h2>
+                <h3>{{ item.subtitle }}</h3>
+                <p>{{ item.description }}</p>
+                <h4>Order {{ item.order }}</h4>
+                <div v-html="item.body"></div>
+                <div v-html="item.embed"></div>
+            </div>
+        </div>  
+    </main>
+  
+</div>
+
+<!-- Vue, Axios, Lodash -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<!-- Sintax Highlighter -->
+<link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism.css" />
+<script src="https://unpkg.com/prismjs"></script>
+
+<!-- Vue app-->
+<script>
+new Vue({
+    el: '#app',
+    data: {
+      content: [],
+    },
+    methods: {
+      getContent: function() {
+        axios.get('content/api/data.json').then(response => {
+            this.content = response.data
+        });
+      }
+    },
+    mounted: function() {
+      this.getContent();
+    },
+    computed: {
+      sortedContent: function() {
+        return _.orderBy(this.content, 'order', 'asc'); 
+      }
+    }
+});
+</script>
+
+</body>
+</html>
