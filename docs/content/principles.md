@@ -1,4 +1,4 @@
-# Guide
+# Principles
 
 ### Descripción
 

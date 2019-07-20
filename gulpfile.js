@@ -30,7 +30,8 @@ function watch_files() {
   watch('./docs/**/*.svg').on('change', browserSync.reload);
   watch('./docs/**/*.html').on('change', browserSync.reload);
   watch('./docs/**/*.css').on('change', browserSync.reload);
-  watch('./docs/**/*.md', series(markdown_compiler, merge_json, reload));
+  watch('./docs/**/*.md', series(reload));
+  //watch('./docs/**/*.md', series(markdown_compiler, merge_json, reload));
 }
 
 function reload(done) {

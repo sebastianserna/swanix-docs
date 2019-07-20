@@ -1,6 +1,0 @@
-* [Home](/)
-* [Guide](guide.md "The greatest guide in the world")
-* [Quick start](quickstart.md)
-* [Writing more pages](more-pages.md)
-* [Custom navbar](custom-navbar.md)
-* [Cover page](cover.md)
