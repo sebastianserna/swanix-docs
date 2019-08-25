@@ -1,2 +1,3 @@
-# swanix-docs
-Basic documentation template
+# Swanix Brand
+
+Brand guidelines and basic documentation
