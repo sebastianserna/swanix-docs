@@ -1,12 +1,10 @@
 {
-  "name": "@swanix/docs",
+  "name": "@swanix/brand",
   "version": "0.1.0",
-  "description": "Experimental documentation template",
+  "description": "Experimental brand template",
   "main": "index.js",
   "scripts": {
-    "watch": "gulp",
-    "markdown": "gulp markdown",
-    "merge": "gulp mergeJson"
+    "watch": "gulp"
   },
   "repository": {
     "type": "git",
@@ -24,9 +22,6 @@
   },
   "devDependencies": {
     "browser-sync": "2.18.12",
-    "gulp": "4.0.2",
-    "gulp-json-concat": "0.1.1",
-    "gulp-markdown-to-json": "1.1.0",
-    "marked": "0.6.3"
+    "gulp": "4.0.2"
   }
 }

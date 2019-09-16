@@ -7,9 +7,6 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 // General plugins
 const browserSync = require('browser-sync');
-const markdownToJSON = require('gulp-markdown-to-json');
-const marked = require('marked');
-const jsonConcat = require('gulp-json-concat');
 
 //-----------------------------------------------------
 // Server tasks
@@ -40,39 +37,8 @@ function reload(done) {
 }
 
 //-----------------------------------------------------
-// Markdown to JSON task
-//-----------------------------------------------------
-
-marked.setOptions({
-  pedantic: false,
-  gfm: true,
-  tables: true,
-  breaks: true,
-  sanitize: false,
-  smartLists: true,
-  smartypants: false,
-  xhtml: false
-});
-
-function markdown_compiler() {
-  return src('./docs/content-old/**/*.md')
-    .pipe(markdownToJSON(marked))
-    .pipe(dest('./docs/content-old/api/src/'));
-}
-
-function merge_json() { 
-  return src('./docs/content-old/api/src/*.json')
-    .pipe(jsonConcat('data.json',function(data){
-      return new Buffer(JSON.stringify(data));
-    }))
-    .pipe(dest('./docs/content/api/'));
-}
-
-//-----------------------------------------------------
 // TASKS
 //-----------------------------------------------------
 
 exports.default = watch_files;
 exports.watch = watch_files;
-exports.markdown = markdown_compiler;
-exports.mergeJson = merge_json;
