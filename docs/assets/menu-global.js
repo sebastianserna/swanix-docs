@@ -4,7 +4,7 @@ let menuGlobal = document.createElement('div');
 menuGlobal.className = "menu-global";
 
 const menuItems = [
-  { name: 'Intro', icon: "⌂", link: "/intro" },
+  { name: 'Intro', icon: "⌂", link: "/" },
   { name: 'Brand', icon: "Ⓑ", link: "/brand" },
   { name: 'Icons', icon: "♘", link: "/icons" },
   { name: 'UI', icon: "▥", link: "/ui" }
