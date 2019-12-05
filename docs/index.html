@@ -9,7 +9,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> 
 </head>
 <body>
-  <div id="app">Please wait...</div>
+  <div id="app-container">
+      <div id="app"></div>
+  </div>
+  <style>
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #app-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+    }
+  </style>
+
   <script>
     window.$docsify = {
       basePath: 'content/',
@@ -18,12 +36,8 @@
       name: "Swanix Brand",
       auto2top: true,
       themeColor: '#000',
-      relativePath: true,
       coverpage: false,
       notFoundPage: true,
-      autoHeader: true,
-      routerMode: 'hash',
-      nameLink: "/",
       themeable: {
           readyTransition : true,
           responsiveTables: true

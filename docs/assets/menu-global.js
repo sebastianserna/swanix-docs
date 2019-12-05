@@ -4,17 +4,49 @@ let menuGlobal = document.createElement('div');
 menuGlobal.className = "menu-global";
 
 const menuItems = [
-  { name: 'Intro', icon: "⌂", link: "/" },
-  { name: 'Brand', icon: "Ⓑ", link: "/brand" },
-  { name: 'Icons', icon: "♘", link: "/icons" },
-  { name: 'UI', icon: "▥", link: "/ui" }
+  { 
+    name: 'Intro', 
+    icon: "⌂", 
+    link: "/", 
+    class:"" 
+  },
+  { 
+    name: 'Brand', 
+    icon: "⎈", 
+    link: "/brand", 
+    class:"" 
+  },
+  { 
+    name: 'Icons', 
+    icon: "♘", 
+    link: "/icons", 
+    class:"" 
+  },
+  { 
+    name: 'UI', 
+    icon: "▥", 
+    link: "/ui", 
+    class:"" 
+  },
+  { 
+    name: 'Stock', 
+    icon: "❖", 
+    link: "/stock",
+    class:"" 
+  },
+  { 
+    name: 'Motion', 
+    icon: "⭆", 
+    link: "/motion",
+    class:"" 
+  }
 ];
 
 const menuGlobalTemplate = `
   <ul>
       ${menuItems.map(item => `
         <li>
-          <a id="menu-${item.name}" href="${item.link}">
+          <a id="menu-${item.name}.toLowerCase();" href="${item.link}" class="${item.class}">
             <span class="menu-global-item-icon">${item.icon}</span>
             <span class="menu-global-item-text">${item.name}</span>
           </a>
@@ -29,7 +61,7 @@ const menuGlobalStyles = `
   /* Docsify */
 
   .sidebar {
-    left: 74px;
+    left: 68px;
     transform: translateX(0px);
   }
 
@@ -38,7 +70,7 @@ const menuGlobalStyles = `
   }
 
   .sidebar-toggle .sidebar-toggle-button {
-    left: 74px;
+    left: 68px;
     display: none;
   }
 
@@ -76,15 +108,26 @@ const menuGlobalStyles = `
     justify-content: center;
     color: rgba(255,255,255,0.6);
     text-decoration: none;
+    transition: 0.3s;
   }
 
   .menu-global a:hover {
     color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.1);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 
   .menu-global a.active {
     color: rgba(255,255,255,1);
     background: #999;
+    background: royalblue;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  .menu-global-item-text {
+    margin-top: -6px;
   }
 
   .menu-global ul {
@@ -105,8 +148,22 @@ const menuGlobalStyles = `
   .menu-global-item-icon {
     font-size: 24px;
   }
+
+
 </style>
 `;
 
 menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
 document.body.insertAdjacentElement("afterbegin", menuGlobal);
+
+// Based on https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
+(function() {
+  var nav = document.getElementsByClassName('menu-global'),
+      link = nav.getElementsByTagName('a'),
+      current = window.location.pathname.split('/')[1];
+      for (var i = 0; i < link.length; i++) {
+      if(link[i].href == current) {
+          link[i].className = "active";
+      }
+  }
+})();
