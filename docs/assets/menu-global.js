@@ -13,31 +13,31 @@ const menuItems = [
   { 
     name: 'Brand', 
     icon: "⎈", 
-    link: "/brand", 
+    link: "brand", 
     class:"" 
   },
   { 
     name: 'Icons', 
     icon: "♘", 
-    link: "/icons", 
+    link: "icons", 
     class:"" 
   },
   { 
     name: 'UI', 
     icon: "▥", 
-    link: "/ui", 
+    link: "ui", 
     class:"" 
   },
   { 
     name: 'Stock', 
     icon: "❖", 
-    link: "/stock",
+    link: "stock",
     class:"" 
   },
   { 
     name: 'Motion', 
     icon: "⭆", 
-    link: "/motion",
+    link: "motion",
     class:"" 
   }
 ];
@@ -157,7 +157,7 @@ menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
 document.body.insertAdjacentElement("afterbegin", menuGlobal);
 
 function addMenuActiveClass() {
-  let path = window.location.pathname;
+  let path = window.location.pathname.split('/')[1];
   let menuLink = document.getElementsByClassName('menu-global-item');
 
   for (let i = 0; i < menuLink.length; i++) {
