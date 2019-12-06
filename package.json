@@ -4,7 +4,7 @@
   "description": "Experimental brand template",
   "main": "index.js",
   "scripts": {
-    "serve": "docsify serve docs --open"
+    "server": "browser-sync start --server --files ./**/* "
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,6 @@
     "npm": ">= 2.14.2"
   },
   "devDependencies": {
-    "docsify-cli": "4.4.0"
+    "browser-sync": "2.26.7"
   }
 }
