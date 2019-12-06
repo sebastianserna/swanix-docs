@@ -157,11 +157,11 @@ menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
 document.body.insertAdjacentElement("afterbegin", menuGlobal);
 
 function addMenuActiveClass() {
-  let path = window.location.pathname;
+  let sectionPathname = window.location.pathname;
   let menuLink = document.getElementsByClassName('menu-global-item');
 
   for (let i = 0; i < menuLink.length; i++) {
-    if(menuLink[i].href === path) {
+    if(menuLink[i].pathname === sectionPathname) {
       menuLink[i].classList.add("active");
     }
   } 
