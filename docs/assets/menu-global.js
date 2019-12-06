@@ -46,7 +46,7 @@ const menuGlobalTemplate = `
   <ul>
       ${menuItems.map(item => `
         <li>
-          <a id="menu-${item.name}.toLowerCase();" href="${item.link}" class="${item.class}">
+          <a class="menu-global-item" href="${item.link}">
             <span class="menu-global-item-icon">${item.icon}</span>
             <span class="menu-global-item-text">${item.name}</span>
           </a>
@@ -156,14 +156,15 @@ const menuGlobalStyles = `
 menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
 document.body.insertAdjacentElement("afterbegin", menuGlobal);
 
-// Based on https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
-(function() {
-  var nav = document.getElementsByClassName('menu-global'),
-      link = nav.getElementsByTagName('a'),
-      current = window.location.pathname.split('/')[1];
-      for (var i = 0; i < link.length; i++) {
-      if(link[i].href == current) {
-          link[i].className = "active";
-      }
-  }
-})();
+function addMenuActiveClass() {
+  let path = window.location.pathname;
+  let menuLink = document.getElementsByClassName('menu-global-item');
+
+  for (let i = 0; i < menuLink.length; i++) {
+    if(menuLink[i].href === path) {
+      menuLink[i].classList.add("active");
+    }
+  } 
+};
+
+document.addEventListener("DOMContentLoaded", addMenuActiveClass);
