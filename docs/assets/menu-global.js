@@ -152,7 +152,7 @@ function createMenuGlobal() {
   menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
 
   document.body.insertAdjacentElement("afterbegin", menuGlobal);
-  addMenuActiveClass();
+  addMenuGlobalActiveClass();
 }
 
 function addMenuGlobalActiveClass() {
