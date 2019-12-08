@@ -1,12 +1,9 @@
 /* New styles */
 
 /* Prevent scroll bounce - Webkit (Mac OS) */
-/* html,
 body {
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-} */
+  overscroll-behavior: none; /* Partial support - No Safari */
+} 
 
 /* Vue Theme - Source https://unpkg.com/docsify@4.9.4/themes/vue.css */
 
