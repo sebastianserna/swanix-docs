@@ -1,50 +1,43 @@
 // Menu Global generator
 
-let menuGlobal = document.createElement('div');
-menuGlobal.className = "menu-global";
+"use strict";
 
-const menuItems = [
+const menuGlobalItems = [
   { 
     name: 'Intro', 
     icon: "⌂", 
-    link: "/", 
-    class:"" 
+    link: "/"
   },
   { 
     name: 'Brand', 
     icon: "⎈", 
-    link: "/brand/", 
-    class:"" 
+    link: "/brand/"
   },
   { 
     name: 'Icons', 
     icon: "♘", 
-    link: "/icons/", 
-    class:"" 
+    link: "/icons/"
   },
   { 
     name: 'UI', 
     icon: "▥", 
-    link: "/ui/", 
-    class:"" 
+    link: "/ui/"
   },
   { 
     name: 'Stock', 
     icon: "❖", 
-    link: "/stock/",
-    class:"" 
+    link: "/stock/"
   },
   { 
     name: 'Motion', 
     icon: "⭆", 
-    link: "/motion/",
-    class:"" 
+    link: "/motion/"
   }
 ];
 
 const menuGlobalTemplate = `
   <ul>
-      ${menuItems.map(item => `
+      ${menuGlobalItems.map(item => `
         <li>
           <a class="menu-global-item" href="${item.link}">
             <span class="menu-global-item-icon">${item.icon}</span>
@@ -127,7 +120,7 @@ const menuGlobalStyles = `
   }
 
   .menu-global-item-text {
-    margin-top: -6px;
+    margin-top: 5px;
   }
 
   .menu-global ul {
@@ -153,10 +146,16 @@ const menuGlobalStyles = `
 </style>
 `;
 
-menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
-document.body.insertAdjacentElement("afterbegin", menuGlobal);
+function createMenuGlobal() {
+  let menuGlobal = document.createElement('div');
+  menuGlobal.className = "menu-global";
+  menuGlobal.innerHTML = menuGlobalTemplate + menuGlobalStyles;
 
-function addMenuActiveClass() {
+  document.body.insertAdjacentElement("afterbegin", menuGlobal);
+  addMenuActiveClass();
+}
+
+function addMenuGlobalActiveClass() {
   let sectionPathname = window.location.pathname;
   let menuLink = document.getElementsByClassName('menu-global-item');
 
@@ -167,4 +166,11 @@ function addMenuActiveClass() {
   } 
 };
 
-document.addEventListener("DOMContentLoaded", addMenuActiveClass);
+function validateEnvironment() {
+  let sectionLocation = window.location.href;
+  if(sectionLocation !== 'http://localhost:3000/#/') {
+    createMenuGlobal();
+  }
+};
+
+document.addEventListener("DOMContentLoaded", validateEnvironment);
