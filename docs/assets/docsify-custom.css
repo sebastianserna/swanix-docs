@@ -1,19 +1,12 @@
 /* New styles */
 
 /* Prevent scroll bounce - Webkit (Mac OS) */
-html, body {
-    height: 100%;
-    overflow: hidden;
-}
-
-#app-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-}
+/* html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+} */
 
 /* Vue Theme - Source https://unpkg.com/docsify@4.9.4/themes/vue.css */
 

@@ -167,8 +167,8 @@ function addMenuGlobalActiveClass() {
 };
 
 function validateEnvironment() {
-  let sectionLocation = window.location.href;
-  if(sectionLocation !== 'http://localhost:3000/#/') {
+  let sectionLocation = window.location.hostname;
+  if(sectionLocation !== 'localhost') {
     createMenuGlobal();
   }
 };
