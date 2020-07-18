@@ -1,6 +1,6 @@
 # Typography
 
-<iframe style="border: none;" width="800" height="1200" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FkS7O7d9ZkDHYgIMrYSaveR%2F00-Swanix-Brand%3Fnode-id%3D27%253A7" allowfullscreen></iframe>
+<iframe style="border: 0px solid rgba(0, 0, 0, 0.1);" width="800" height="1200" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FTbFKOzj3zRbWwpBhzA0ap7%2F00-Swanix-Brand%3Fnode-id%3D27%253A7&chrome=DOCUMENTATION" allowfullscreen></iframe>
 
 Nullam posuere, tortor et tristique tincidunt, elit mi gravida tortor, eu commodo massa felis non dolor. Cras posuere lacus et vestibulum rhoncus. Donec in sagittis nibh. Pellentesque aliquet nibh eget felis suscipit, nec finibus augue condimentum. Aenean ac neque magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis varius nisi. Vivamus lectus massa, rutrum et auctor blandit, fermentum eu libero. Etiam tincidunt nisl sit amet metus sollicitudin hendrerit. Vestibulum vulputate purus quis bibendum condimentum. Nunc suscipit convallis ante tempus ultricies. Donec erat arcu, hendrerit sed sodales sed, convallis ac quam.
 
