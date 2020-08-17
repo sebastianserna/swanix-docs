@@ -2,4 +2,11 @@
 
 # Swanix Brand
 
+### Overview
+
 Brand guidelines and documentation
+
+---
+### Credits
+
+Sebastian Serna
