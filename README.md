@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-    <img alt="Swanix" title="Swanix Brand" src="https://img.shields.io/badge/Version-v0.1.0-green">
+    <img alt="Swanix" title="Swanix Brand" src="https://img.shields.io/badge/Version-0.1.0-blue">
     <img alt="Swanix" title="Swanix Brand" src="https://img.shields.io/github/license/swanix/ui">
 </p>
 
