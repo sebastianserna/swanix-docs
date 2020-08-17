@@ -12,7 +12,6 @@
 
 - @sebastianserna
 
----
 
 ### Requisitos
 
@@ -21,7 +20,7 @@ Antes de iniciar debes tener previamente instalados:
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/)
 
-### Instalación
+## Instalación
 
 En una carpeta vacía de tu equipo escribe el siguiente comando en la terminal:
 
