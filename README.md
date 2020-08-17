@@ -1,10 +1,18 @@
 <p align="center">
-    <img alt="GitPoint" title="GitPoint" src="https://swanix.org/assets/images/apple-touch-icon.png">
+    <img alt="Swanix" title="Swanix Brand" src="https://swanix.org/assets/images/apple-touch-icon.png">
 </p>
 <h1 align="center"> Swanix Brand </h1>
 <p align="center">
     Brand guidelines and documentation
 </p>
+
+<p align="center">
+    <img alt="Swanix" title="Swanix Brand" src="https://img.shields.io/badge/Version-v0.1.0-green">
+    <img alt="Swanix" title="Swanix Brand" src="https://img.shields.io/github/license/swanix/ui">
+</p>
+
+
+
 
 ---
 
