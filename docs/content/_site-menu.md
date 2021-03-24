@@ -1,5 +1,4 @@
-* Brand
-  * [Overview](/)
+* [Brand](/)
   * [Principles](principles.md)
   * [Logo](logo.md)
   * [Colors](colors.md)
@@ -7,7 +6,6 @@
   * [Icons](icons.md)
   * [Photography](photography.md)
   * [Illustration](illustration.md)
-
 * Digital
   * [Website](website.md)
   * [Apps](apps.md)
